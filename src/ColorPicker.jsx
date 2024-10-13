@@ -6,6 +6,8 @@ export default function ColorPicker() {
         setColor(event.target.value);
     }
     
+    const ColorText = Color === '#FFFFFF' ? 'text-gray-800' : 'text-gray-100';
+
     // const Divstyle = {Color}+' w-[300px] h-[300px] border border-gray-400 rounded-2xl flex items-center justify-center';
     // const Divstyle = `bg-[${Color}] w-[300px] h-[300px] border border-gray-400 rounded-2xl flex items-center justify-center`;
     const Divstyle = {
@@ -22,7 +24,7 @@ export default function ColorPicker() {
     return (
     <div className='flex flex-col items-center justify-center w-[50%] bg-gray-50 h-auto rounded-2xl p-4'>
       <div style={Divstyle}  >
-        <h3>The color Selected is :{Color}</h3>
+        <h3 className={ColorText} >The color Selected is :{Color}</h3>
       </div>
       <input type="color" value={Color} className='w-full rounded-2xl mt-4' onChange={ChangeColor} />
     </div>
